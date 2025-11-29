@@ -18,14 +18,16 @@ class UserService(
 
     fun register(request: RegisterRequest): AuthResponse {
 
-        if (userRepository.findByEmail(request.email) != null) {
+        val email = request.email.trim().lowercase()
+
+        if (userRepository.existsByEmail(email)) {
             throw ResponseStatusException(HttpStatus.CONFLICT, "El usuario ya existe")
         }
 
         val user = User(
             name = request.name,
             lastName = request.lastName,
-            email = request.email,
+            email = email,
             phone = request.phone,
             password = passwordEncoder.encode(request.password)
         )
@@ -45,7 +47,9 @@ class UserService(
 
     fun login(request: LoginRequest): AuthResponse {
 
-        val user = userRepository.findByEmail(request.email)
+        val email = request.email.trim().lowercase()
+
+        val user = userRepository.findByEmail(email)
             ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado")
 
         if (!passwordEncoder.matches(request.password, user.password)) {
