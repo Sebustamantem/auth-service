@@ -28,7 +28,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
-    // SECURITY (obligatorio para BCrypt + HttpSecurity)
+    // SECURITY (para BCrypt + HttpSecurity)
     implementation("org.springframework.boot:spring-boot-starter-security")
 
     // JWT
@@ -39,8 +39,8 @@ dependencies {
     // PostgreSQL Driver
     implementation("org.postgresql:postgresql:42.7.2")
 
-    // Eureka Client
-    implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+    // ❗ QUITADO — NO usar Eureka
+    // implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
     // Config Server Client
     implementation("org.springframework.cloud:spring-cloud-starter-config")
