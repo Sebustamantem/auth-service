@@ -1,31 +1,3 @@
 spring:
   application:
     name: auth-service
-
-  cloud:
-    config:
-      enabled: false
-
-  datasource:
-    url: jdbc:postgresql://ep-floral-math-ahvyc704-pooler.c-3.us-east-1.aws.neon.tech:5432/neondb?sslmode=require
-    username: neondb_owner
-    password: npg_rF6gLTwRd5Va
-    driver-class-name: org.postgresql.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-
-server:
-  port: 8080
-
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: https://eureka-server-4ipn.onrender.com/eureka/
