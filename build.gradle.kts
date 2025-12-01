@@ -39,7 +39,7 @@ dependencies {
     // PostgreSQL Driver
     implementation("org.postgresql:postgresql:42.7.2")
 
-
+     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
     // Config Server Client
     implementation("org.springframework.cloud:spring-cloud-starter-config")
