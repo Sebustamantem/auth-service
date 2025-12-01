@@ -39,8 +39,7 @@ dependencies {
     // PostgreSQL Driver
     implementation("org.postgresql:postgresql:42.7.2")
 
-    // ❗ QUITADO — NO usar Eureka
-    // implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+
 
     // Config Server Client
     implementation("org.springframework.cloud:spring-cloud-starter-config")
